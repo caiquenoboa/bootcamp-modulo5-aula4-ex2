@@ -6,19 +6,12 @@ public class Main {
 	// write your code here
 //        ContaCorrente c = new ContaCorrente();
 
-        ContaCorrente conta1 = new ContaCorrente();
+        Fracao f1 = new Fracao(9, 3);
+        Fracao f2 = new Fracao(2, 2);
 
-        conta1.depositar(10);
-        System.out.println(conta1.getSaldo());
+        f1.multiplicar(f2);
 
-        ContaCorrente conta2 = new ContaCorrente(conta1);
-        System.out.println(conta2.getSaldo());
-
-        conta1.transferencia(5, conta2);
-        System.out.println(conta1.getSaldo());
-        System.out.println(conta2.getSaldo());
-
-        conta1.transferencia(10, conta2);
+        System.out.println(f1.toString());
 
     }
 }
