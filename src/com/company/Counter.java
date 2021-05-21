@@ -4,7 +4,7 @@ public class Counter {
     private int value;
 
     public Counter(){
-        value = 0;
+        this.value = 0;
     }
 
     public Counter(int value){
@@ -13,7 +13,7 @@ public class Counter {
 
 
     public int getValue() {
-        return value;
+        return this.value;
     }
 
     public void setValue(int value) {
@@ -21,10 +21,10 @@ public class Counter {
     }
 
     public void add(){
-        value++;
+        this.value++;
     }
 
     public void sub(){
-        value--;
+        this.value--;
     }
 }

@@ -2,6 +2,14 @@ package com.company;
 
 public class ContaCorrente {
 
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
     private double saldo;
     private String name;
 
@@ -16,8 +24,8 @@ public class ContaCorrente {
     }
 
     public ContaCorrente(ContaCorrente conta){
-        this.saldo = conta.saldo;
-        this.name = conta.name;
+        this.saldo = conta.getSaldo();
+        this.name = conta.getName();
     }
 
     public String getName(){
@@ -29,11 +37,11 @@ public class ContaCorrente {
     }
 
 
-    public void deposito(double valor){
+    public void depositar(double valor){
         saldo += valor;
     }
 
-    public double saque(double valor){
+    public double sacar(double valor){
         if (valor > this.saldo){
             System.out.println("Não possui saldo suficiente");
             return 0;
@@ -42,17 +50,23 @@ public class ContaCorrente {
         return valor;
     }
 
-    public void devolucao(double valor){
-        this.saldo += valor;
+    public void devolucao(double valor, ContaCorrente contaDestino){
+        if(valor > this.saldo){
+            System.out.println("Não possui saldo suficiente");
+            return;
+        }
+        this.saldo -= valor;
+        contaDestino.depositar(valor);
     }
 
-    public void transferencia(double valor, ContaCorrente conta_destino){
+    public void transferencia(double valor, ContaCorrente contaDestino){
         if (valor > this.saldo){
             System.out.println("Não possui saldo suficiente");
             return;
         }
         this.saldo -= valor;
-        conta_destino.saldo += valor;
+        contaDestino.depositar(valor);
         System.out.println("Transferencia realizada com sucesso");
     }
+
 }
