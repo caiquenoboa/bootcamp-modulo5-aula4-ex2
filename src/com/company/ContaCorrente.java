@@ -19,8 +19,8 @@ public class ContaCorrente {
     }
 
     public ContaCorrente(){
-        saldo = 0;
-        name = "";
+        this.saldo = 0;
+        this.name = "";
     }
 
     public ContaCorrente(ContaCorrente conta){
@@ -38,7 +38,7 @@ public class ContaCorrente {
 
 
     public void depositar(double valor){
-        saldo += valor;
+        this.saldo += valor;
     }
 
     public double sacar(double valor){
@@ -46,7 +46,7 @@ public class ContaCorrente {
             System.out.println("Não possui saldo suficiente");
             return 0;
         }
-        saldo -= valor;
+        this.saldo -= valor;
         return valor;
     }
 
