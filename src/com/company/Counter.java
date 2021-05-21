@@ -11,6 +11,10 @@ public class Counter {
         this.value = value;
     }
 
+    public Counter(Counter c){
+        this.value = c.getValue();
+    }
+
 
     public int getValue() {
         return this.value;
